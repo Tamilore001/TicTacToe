@@ -1,0 +1,120 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.game-container {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.game-container h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.difficulty-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.difficulty-btn {
+    padding: 8px 18px;
+    border: 2px solid #222;
+    border-radius: 6px;
+    background: white;
+    color: #222;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.difficulty-btn:hover {
+    background: #f2f2f2;
+}
+
+.difficulty-btn.active {
+    background: #222;
+    color: white;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 360px;
+    height: 360px;
+    margin: 0 auto 25px;
+}
+
+.cell-form {
+    margin: 0;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    font-size: 45px;
+    font-weight: bold;
+    background: white;
+    border: 2px solid #222;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background: #f2f2f2;
+}
+
+.message {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.reset-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background: #444;
+}

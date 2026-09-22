@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="game-container">
+    <h1>Tic Tac Toe, a game of X's and O's</h1>
+
+    <form method="post" asp-page-handler="SetDifficulty" class="difficulty-form">
+        <button type="submit" name="difficulty" value="Easy"
+                class="difficulty-btn @(Model.Difficulty == "Easy" ? "active" : "")">Easy</button>
+        <button type="submit" name="difficulty" value="Medium"
+                class="difficulty-btn @(Model.Difficulty == "Medium" ? "active" : "")">Medium</button>
+        <button type="submit" name="difficulty" value="Hard"
+                class="difficulty-btn @(Model.Difficulty == "Hard" ? "active" : "")">Hard</button>
+    </form>
+
+    <div class="board">
+        @for (int i = 0; i < 9; i++)
+        {
+            bool isDisabled = !string.IsNullOrEmpty(Model.Board[i]) || Model.GameOver;
+            <form method="post" class="cell-form">
+                <button type="submit"
+                        name="position"
+                        value="@i"
+                        class="cell"
+                        disabled="@(isDisabled ? "disabled" : null)">
+                    @Model.Board[i]
+                </button>
+            </form>
+        }
+    </div>
+    <p class="message">
+        @Model.Message
+    </p>
+
+    <form method="post">
+        <button type="submit" asp-page-handler="Reset" class="reset-button">Restart Game</button>
+    </form>
+</div>
